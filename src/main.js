@@ -2,6 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import axios from 'axios';
 
 const form = document.querySelector('.form'),
   searchInput = document.querySelector('.search-input'),
@@ -32,8 +33,6 @@ function fetchImages(event) {
     })
     .then(images => {
       if (images.hits.length === 0) {
-        console.log(iziToast.warning);
-
         return iziToast.warning({
           title: 'Ooops',
           message:
