@@ -33,7 +33,7 @@ async function handleFormSubmit(event) {
 
 async function fetchImages() {
   const response = await axios
-    .get('/api', {
+    .get('/api/', {
       params: {
         key: '41798579-68ab5b2702b30822247f51cf8',
         q: searchInput.value,
@@ -42,7 +42,7 @@ async function fetchImages() {
         safesearch: true,
         page,
         per_page,
-        mode: 'no-cors',
+        // mode: 'no-cors',
       },
     })
     .then(response => {
