@@ -30,8 +30,8 @@
   letter-spacing: 0.64px;
   font-family: inherit;
 }
-.submit-btn {
-  max-width: 95px;
+.submit-btn,
+.load-more-btn {
   padding: 8px 16px;
   border: none;
   border-radius: 20px;
@@ -41,13 +41,25 @@
   line-height: 24px;
   letter-spacing: 0.64px;
 }
+.submit-btn {
+  max-width: 95px;
+}
+.load-more-btn {
+  display: block;
+  margin: 0 auto;
+}
+.load-more-btn.is-hidden {
+  display: none;
+}
 .email-text:focus,
 .massege-text:focus {
   border-color: #000;
   outline: none;
 }
 .submit-btn:hover,
-.submit-btn:focus {
+.submit-btn:focus,
+.load-more-btn:hover,
+.load-more-btn:focus {
   background: #a0522d;
 }
 .loader.is-hidden {
