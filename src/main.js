@@ -42,7 +42,6 @@ async function fetchImages() {
         safesearch: true,
         page,
         per_page,
-        // mode: 'no-cors',
       },
     })
     .then(response => {
@@ -71,72 +70,3 @@ async function fetchImages() {
     });
 }
 export default fetchImages;
-
-// const gallery = document.querySelector('.gallery');
-// function renderImages(images) {
-//   const galleryMarkup = images
-//     .map(
-//       ({
-//         webformatURL,
-//         largeImageURL,
-//         tags,
-//         likes,
-//         views,
-//         comments,
-//         downloads,
-//       }) =>
-//         `
-//       <li class="gallery-item">
-//         <a href="${largeImageURL}">
-//           <img src="${webformatURL}" alt="${tags}" class="gallery-image"/>
-//         </a>
-//         <div class="image-desc">
-//           <div class="image-desc-item">
-//             <div class="image-desc-label">Likes</div>
-//             <div>${likes}</div>
-//           </div>
-//           <div class="image-desc-item">
-//             <div class="image-desc-label">Views</div>
-//             <div>${views}</div>
-//           </div>
-//           <div class="image-desc-item">
-//             <div class="image-desc-label">Comments</div>
-//             <div>${comments}</div>
-//           </div>
-//           <div class="image-desc-item">
-//             <div class="image-desc-label">Downloads</div>
-//             <div>${downloads}</div>
-//           </div>
-//         </div>
-//       </li>
-//       `
-//     )
-//     .join('');
-//   gallery.insertAdjacentHTML('beforeend', galleryMarkup);
-//   new SimpleLightbox('.gallery a').refresh();
-// }
-
-// async function loadMoreImages() {
-//   loader.classList.remove('is-hidden');
-//   loadMoreBtn.classList.add('is-hidden');
-//   await fetchImages();
-// }
-
-// function galleryReset() {
-//   page = 1;
-//   gallery.innerHTML = '';
-//   loader.classList.remove('is-hidden');
-//   loadMoreBtn.classList.add('is-hidden');
-// }
-
-// function handlerLoadMoreBtn(totalHits) {
-//   const maxPages = Math.ceil(totalHits / per_page);
-//   if (page > maxPages) {
-//     return iziToast.show({
-//       message: "We're sorry, but you've reached the end of search results.",
-//       position: 'topRight',
-//     });
-//   } else {
-//     loadMoreBtn.classList.remove('is-hidden');
-//   }
-// }
